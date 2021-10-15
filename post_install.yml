@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: "*"
   tasks:
     - name: remove redundant packages
       apt:

@@ -5,27 +5,27 @@ base_archiving_tools:
   - cabextract
   - file-roller
   - mpack
-  - p7zip-full
-  - p7zip-rar
-  - rar
-  - sharutils
-  - unace
-  - unrar
+  # - p7zip-full
+  # - p7zip-rar
+  # - rar
+  # - sharutils
+  # - unace
+  # - unrar
   - unzip
-  - uudeview
+  # - uudeview
   - zip
 
 base_productivity_tools:
-  - libreoffice
+  # - libreoffice
 
 base_system_tools:
-  - fatrace
-  - gnome-calculator
-  - gnome-shell-extension-bluetooth-quick-connect  # enable in gnome-tweak-tools > Extensions
-  - gnome-shell-timer  # enable in gnome-tweak-tools > Extensions
-  - gnome-tweak-tool
-  - progress
-  - pwgen
+  # - fatrace
+  # - gnome-calculator
+  # - gnome-shell-extension-bluetooth-quick-connect  # enable in gnome-tweak-tools > Extensions
+  # - gnome-shell-timer  # enable in gnome-tweak-tools > Extensions
+  # - gnome-tweak-tool
+  # - progress
+  # - pwgen
   #- syncthing
 
 base_system_tools_laptop:
@@ -37,99 +37,100 @@ base_system_tools_laptop:
 #  - tp-smapi-dkms  # for older ThinkPads
 
 base_download_tools:
-  - aria2
-  - axel
-  - transmission
-  - speedtest-cli
+  # - aria2
+  # - axel
+  # - transmission
+  # - speedtest-cli
   - wget
-  - youtube-dl
+  # - youtube-dl
 
 base_developer_tools:
-  - android-tools-adb
-  - android-tools-fastboot
+  # - android-tools-adb
+  # - android-tools-fastboot
+  - vim
   - ansible
   - ansible-lint
   - awscli
-  - bat
-  - bpython
-  - black
-  - cloc
-  - clusterssh
-  - colordiff
-  - csvkit
-  - curl
-  - default-jre-headless
-  - dos2unix
-  - entr
-  - expect
-  - filezilla
-  - fonts-powerline
-  - g++
-  - gedit-plugins
-  - geoip-bin
-  - ghostwriter
+  # - bat
+  # - bpython
+  # - black
+  # - cloc
+  # - clusterssh
+  # - colordiff
+  # - csvkit
+  # - curl
+  # - default-jre-headless
+  # - dos2unix
+  # - entr
+  # - expect
+  # - filezilla
+  # - fonts-powerline
+  # - g++
+  # - gedit-plugins
+  # - geoip-bin
+  # - ghostwriter
   - git
   - git-extras
   - gitg
   - golang-go
-  - htop
-  - httpie
-  - inotify-tools
-  - ipython3
+  # - htop
+  # - httpie
+  # - inotify-tools
+  # - ipython3
   - jq
-  - kwalify
-  - makeself
-  - meld
-  - miller
-  - moreutils
-  - most
-  - ncat
-  - netcat
-  - nmap
-  - nmon
-  - nodejs
-  - pandoc
-  - parallel
-  - pep8
-  - pipenv
-  - powerline
-  - pry
-  - pssh
+  # - kwalify
+  # - makeself
+  # - meld
+  # - miller
+  # - moreutils
+  # - most
+  # - ncat
+  # - netcat
+  # - nmap
+  # - nmon
+  # - nodejs
+  # - pandoc
+  # - parallel
+  # - pep8
+  # - pipenv
+  # - powerline
+  # - pry
+  # - pssh
   #- puppet
   #- puppet-lint
-  - pv
+  # - pv
   - pylint
   - python3-demjson  # provides jsonlint-py3 for json lint
   - python3-jmespath
   - python3-pep8
   - python3-pip
-  - ranger
-  - recode
-  - remmina
-  - rename
-  - ripgrep  # launch using rg from the cli
-  - ruby
-  - ruby-dev
-  - shellcheck
-  - siege
-  - socat
-  - sshfs
-  - sshpass
-  - tilix
-  - tldr
-  - tmux
-  - tmuxp
-  - tree
-  - uget
-  - xclip
-  - yamllint
-  - zeal
+  # - ranger
+  # - recode
+  # - remmina
+  # - rename
+  # - ripgrep  # launch using rg from the cli
+  # - ruby
+  # - ruby-dev
+  # - shellcheck
+  # - siege
+  # - socat
+  # - sshfs
+  # - sshpass
+  # - tilix
+  # - tldr
+  # - tmux
+  # - tmuxp
+  # - tree
+  # - uget
+  # - xclip
+  # - yamllint
+  # - zeal
 
 base_virtualization_tools:
-  - virtualbox
+  # - virtualbox
 #  - virtualbox-ext-pack
-  - docker.io
-  - docker-compose
+  # - docker.io
+  # - docker-compose
 
 base_media_tools:
   - ffmpeg
@@ -145,4 +146,16 @@ base_media_tools:
 base_openssh_server:
   apt_package: openssh-server
   service: ssh
+
+libvirt_packages:
+  - qemu-kvm
+  - libvirt-daemon-system
+  - libvirt-clients
+  - bridge-utils
+  - virt-manager
+
+desktop_rdp:
+  - ubuntu-desktop
+  - xrdp  
+
 ...

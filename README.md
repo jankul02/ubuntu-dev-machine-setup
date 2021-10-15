@@ -2,25 +2,7 @@
 
 This repo contains Ansible playbooks to configure your system as a development machine upon a clean install.
 
-The playbooks should run in Debian based system but was only tested with:
 - **Ubuntu 20.04**
-- **Ubuntu Budgie 20.04**
-- **Ubuntu 21.04**
-
-For other versions of Ubuntu, change to the other branches of this git repo.
-
-![bullet-train-zsh-theme](.images/screenshot-bullet-train.png)
-
-Screenshot above is using *bullet-train zsh theme*
-
-![pure-zsh-theme](.images/screenshot-pure.png)
-
-Screenshot above is using *pure zsh theme*
-
-![p10k-zsh-theme-tmux](.images/screenshot-p10k-tmux.png)
-
-Screenshot above is using *p10k zsh theme with tmux*
-
 
 ## Pre-requisites
 
