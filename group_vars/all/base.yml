@@ -16,17 +16,17 @@ base_archiving_tools:
   - zip
 
 base_productivity_tools:
-  # - libreoffice
+  - libreoffice
 
 base_system_tools:
   # - fatrace
-  # - gnome-calculator
-  # - gnome-shell-extension-bluetooth-quick-connect  # enable in gnome-tweak-tools > Extensions
-  # - gnome-shell-timer  # enable in gnome-tweak-tools > Extensions
-  # - gnome-tweak-tool
+  - gnome-calculator
+  - gnome-shell-extension-bluetooth-quick-connect  # enable in gnome-tweak-tools > Extensions
+  - gnome-shell-timer  # enable in gnome-tweak-tools > Extensions
+  - gnome-tweak-tool
   # - progress
   # - pwgen
-  #- syncthing
+  # - syncthing
 
 base_system_tools_laptop:
 #  - cpufrequtils
@@ -155,7 +155,17 @@ libvirt_packages:
   - virt-manager
 
 desktop_rdp:
+  - gnome-session
+  - gnome-software 
+  - gnome-system-monitor 
+  - gnome-terminal 
+  - gdm3 
+  - nautilus   
   - ubuntu-desktop
-  - xrdp  
+  - xserver-xorg-input-all  
+  - xrdp
+  - xserver-xorg-core
+  - xorgxrdp  
+
 
 ...

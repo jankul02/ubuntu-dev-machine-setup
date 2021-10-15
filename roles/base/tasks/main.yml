@@ -169,6 +169,7 @@
     force_apt_get: yes
 
 
+
 - name: adding  user xrdp to group ssl-cert
   user:
     name: xrdp
@@ -178,7 +179,7 @@
 - name: clear xrdp addresses
   lineinfile:
     path: "/etc/xrdp/xrdp.ini"
-    regexp:: '^(\#?)(address)([[:space:]]*)(\=.*)'   
+    regexp: '^(\#?)(address)([[:space:]]*)(\=.*)'   
     state: absent 
 
 - name: xrdp address to local only
@@ -188,11 +189,18 @@
     state: present 
 
 
+- name: Enable and start gdm3 service
+  service:
+    name: gdm3
+    state: restarted
+    enabled: yes
+
 - name: Enable and start xrdp service
   service:
     name: xrdp
     state: restarted
     enabled: yes
+
 
 
 # add user to docker group to run docker commands without sudo
@@ -238,7 +246,7 @@
 - name: Enable and start libvirt service
   service:
     name: libvirtd
-    state: started
+    state: restarted
     enabled: yes
 
 
