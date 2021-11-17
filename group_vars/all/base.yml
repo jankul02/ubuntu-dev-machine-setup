@@ -78,6 +78,8 @@ base_developer_tools:
   # - inotify-tools
   # - ipython3
   - jq
+  - default-jre
+  - default-jdk 
   # - kwalify
   # - makeself
   # - meld
@@ -166,6 +168,18 @@ desktop_rdp:
   - xrdp
   - xserver-xorg-core
   - xorgxrdp  
+
+docker:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io  
+
+
 
 
 ...

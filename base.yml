@@ -3,5 +3,6 @@
 - hosts: "*"
   roles:
     - base
+    - minikube
 
 ...

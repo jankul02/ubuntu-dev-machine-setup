@@ -71,6 +71,9 @@
     state: present
     force_apt_get: yes
 
+
+
+
 # - name: install productivity tools
 #   apt:
 #     name: "{{ base_productivity_tools }}"
@@ -168,8 +171,6 @@
     state: present
     force_apt_get: yes
 
-
-
 - name: adding  user xrdp to group ssl-cert
   user:
     name: xrdp
@@ -192,16 +193,51 @@
 - name: Enable and start gdm3 service
   service:
     name: gdm3
-    state: restarted
+    state: started
     enabled: yes
 
 - name: Enable and start xrdp service
   service:
     name: xrdp
-    state: restarted
+    state: started
     enabled: yes
 
 
+
+
+- name: "apt | ensure Google linux signing key present"
+  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+
+- name: "apt | ensure Google chrome repo present"
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: "google-chrome"
+    state: present
+    update_cache: yes
+
+- name: "apt | ensure Google chrome present"
+  apt:
+    name: google-chrome-stable
+    state: present      
+
+- name: "apt | ensure Google Cloud signing key present"
+  apt_key: url=https://packages.cloud.google.com/apt/doc/apt-key.gpg state=present
+
+
+- name: Adding apt repository for Kubernetes
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: /etc/apt/sources.list.d/kubernetes.list
+  
+- name: Install Kubernetes binaries
+  apt: 
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - kubectl
 
 # add user to docker group to run docker commands without sudo
 # add user to vboxusers group so that user can attach usb devices to guest OS
@@ -246,10 +282,53 @@
 - name: Enable and start libvirt service
   service:
     name: libvirtd
-    state: restarted
+    state: started
     enabled: yes
 
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
 
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+
+- name: Update apt and install docker-ce
+  apt:
+    name: "{{ docker }}"
+    update_cache: yes
+    state: present
+    force_apt_get: yes
+    
+- name: add user to docker  groups
+  user:
+    name: "{{ local_username }}"
+    append: yes
+    groups:
+      - docker
+
+
+- name: Install Docker Module for Python
+  pip:
+    name: docker
+
+- name: Update apt and install dnsmasq
+  apt:
+    name: "dnsmasq"
+    update_cache: yes
+    state: present
+    force_apt_get: yes
+
+
+- name: Update apt and qemu-utils
+  apt:
+    name: "qemu-utils"
+    update_cache: yes
+    state: present
+    force_apt_get: yes
 
 
 ...
