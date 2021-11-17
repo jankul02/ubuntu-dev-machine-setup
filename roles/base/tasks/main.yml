@@ -99,6 +99,9 @@
     state: present
     force_apt_get: yes
 
+
+
+
 - name: Set default text editor to vim
   alternatives:
     name: editor
@@ -311,9 +314,19 @@
       - docker
 
 
+
 - name: Install Docker Module for Python
   pip:
-    name: docker
+    name: "{{ item }}"
+  with_items:
+    - docker
+    - kubernetes
+
+- name: Install roles from Ansible Galaxy
+  command: ansible-galaxy collection install {{ item}}
+  with_items:
+    - "kubernetes.core"
+
 
 - name: Update apt and install dnsmasq
   apt:

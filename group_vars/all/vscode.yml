@@ -19,7 +19,7 @@ vscode_extensions:
   - Gruntfuggly.todo-tree
   - shardulm94.trailing-spaces
   - Equinusocio.vsc-material-theme
-  - vscodevim.vim
+ # - vscodevim.vim
   - visualstudioexptteam.vscodeintellicode
   - ms-azuretools.vscode-docker
   - vscode-icons-team.vscode-icons
